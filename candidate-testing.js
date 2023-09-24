@@ -50,12 +50,12 @@ function gradeQuiz(candidateAnswers) {
   // } else {
   //   console.log("The answer you provided is incorrect.");
   // }
-  console.log(`Correct Answer:\tCandidate Answer:
+  console.log(`Correct Answer:\t\tCandidate Answer:
   ${correctAnswers[0]}\t\t${candidateAnswers[0]}
-  ${correctAnswers[1]}\t\t${candidateAnswers[1]}
+  ${correctAnswers[1]}\t\t\t${candidateAnswers[1]}
   ${correctAnswers[2]}\t\t\t${candidateAnswers[2]}
   ${correctAnswers[3]}\t\t${candidateAnswers[3]}
-  ${correctAnswers[4]}\t\t\t${candidateAnswers[4]}`);
+  ${correctAnswers[4]}\t\\tt\t${candidateAnswers[4]}`);
 
   let numberCorrect = 0;
   for (let i = 0; i < correctAnswers.length; i++) {
