@@ -55,7 +55,7 @@ function gradeQuiz(candidateAnswers) {
   ${correctAnswers[1]}\t\t\t${candidateAnswers[1]}
   ${correctAnswers[2]}\t\t\t${candidateAnswers[2]}
   ${correctAnswers[3]}\t\t${candidateAnswers[3]}
-  ${correctAnswers[4]}\t\\tt\t${candidateAnswers[4]}`);
+  ${correctAnswers[4]}\t\t\t\t${candidateAnswers[4]}`);
 
   let numberCorrect = 0;
   for (let i = 0; i < correctAnswers.length; i++) {
