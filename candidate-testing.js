@@ -45,20 +45,32 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-// if (candidateAnswer == correctAnswer) {
-//   console.log("That's correct. Good job!");
-// } else {
-//   console.log("The answer you provided is incorrect.");
-// }
-console.log(`Correct Answer:\tCandidate Answer:
-${correctAnswers[0]}\t\t${candidateAnswers[0]}
-${correctAnswers[1]}\t\t${candidateAnswers[1]}
-${correctAnswers[2]}\t\t\t${candidateAnswers[2]}
-${correctAnswers[3]}\t\t${candidateAnswers[3]}
-${correctAnswers[4]}\t\t\t${candidateAnswers[4]}`);
+  // if (candidateAnswer == correctAnswer) {
+  //   console.log("That's correct. Good job!");
+  // } else {
+  //   console.log("The answer you provided is incorrect.");
+  // }
+  console.log(`Correct Answer:\tCandidate Answer:
+  ${correctAnswers[0]}\t\t${candidateAnswers[0]}
+  ${correctAnswers[1]}\t\t${candidateAnswers[1]}
+  ${correctAnswers[2]}\t\t\t${candidateAnswers[2]}
+  ${correctAnswers[3]}\t\t${candidateAnswers[3]}
+  ${correctAnswers[4]}\t\t\t${candidateAnswers[4]}`);
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  let numberCorrect = 0;
+  for (let i = 0; i < correctAnswers.length; i++) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      numberCorrect += 1
+    }
+  }
 
+  let grade = (numberCorrect / questions.length) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
+  console.log(`Your score is ${grade}%.`);
+  if (grade < 80) {
+    console.log(`You have failed the quiz.`);
+  } else {
+    console.log(`Congratulations, you have passed the quiz!`);
+  }
 
   return grade;
 }
