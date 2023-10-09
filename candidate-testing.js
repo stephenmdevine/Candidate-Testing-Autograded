@@ -35,32 +35,22 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  // console.log(question);
-  // candidateAnswer = input.question(question);
   for (let i = 0; i < questions.length; i++) {
     let currentAnswer = input.question(questions[i]);
     candidateAnswers.push(currentAnswer);
   }
+  console.log();
 }
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  // if (candidateAnswer == correctAnswer) {
-  //   console.log("That's correct. Good job!");
-  // } else {
-  //   console.log("The answer you provided is incorrect.");
-  // }
-  console.log(`Correct Answer:\t\tCandidate Answer:
-  ${correctAnswers[0]}\t\t${candidateAnswers[0]}
-  ${correctAnswers[1]}\t\t\t${candidateAnswers[1]}
-  ${correctAnswers[2]}\t\t\t${candidateAnswers[2]}
-  ${correctAnswers[3]}\t\t${candidateAnswers[3]}
-  ${correctAnswers[4]}\t\t\t\t${candidateAnswers[4]}`);
-
   let numberCorrect = 0;
   for (let i = 0; i < correctAnswers.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       numberCorrect += 1
+      console.log(`Your answer to question ${i+1}, '${candidateAnswers[i]}', is correct!`);
+    } else {
+      console.log(`You guessed '${candidateAnswers[i]}' for question ${i+1}. The correct answer is '${correctAnswers[i]}'.`);
     }
   }
 
